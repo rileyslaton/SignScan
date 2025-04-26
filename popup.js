@@ -56,8 +56,7 @@ document.getElementById('scan').addEventListener('click', async () => {
             },
             {
               role: "user",
-              content: `Summarize the following Terms of Service and highlight risks like waiving legal rights, forced arbitration, data selling, or limitations of liability:\n\n${text}`
-            }
+              content: `Summarize the following Terms of Service and highlight risks like waiving legal rights, forced arbitration, data selling, or limitations of liability in bullet points for critical main points so that it is not too long to read. then create sections based on the summary to consolidate summarized parts together with bolded headings and attractive formatting while making it look concise:\n\n${text}`
           ],
           temperature: 0.2
         })
