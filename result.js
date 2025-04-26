@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const summary = data?.tosSummary || "No summary available.";
     const summaryElement = document.getElementById('summary');
     if (summaryElement) {
-      summaryElement.textContent = summary;
+      summaryElement.textContent = simpleMarkdownToHtml(summary);
     } else {
       console.error("Element with ID 'summary' not found.");
     }
@@ -36,4 +36,13 @@ function assessRiskLevel(text) {
   } else {
     return { label: "Low", color: "green" };
   }
+}
+
+function simpleMarkdownToHtml(text) {
+    return text
+      .replace(/^# (.*$)/gm, '<h1>$1</h1>')               // # Headers
+      .replace(/^## (.*$)/gm, '<h2>$1</h2>')             // ## Headers
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // **bold**
+      .replace(/\*(.*?)\*/g, '<em>$1</em>')              // *italic*
+      .replace(/\n/g, '<br>');                           // Newlines
 }
