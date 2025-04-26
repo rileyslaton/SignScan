@@ -38,7 +38,7 @@ document.getElementById('scan').addEventListener('click', async () => {
   
   // Calls OpenAI to summarize the TOS
   async function sendToOpenAI(text) {
-    const apiKey = 'Your API Key Here'; // Replace this with your real key
+    const apiKey = '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'; // Replace this with your real key
   
     try {
       const response = await fetch("https://api.openai.com/v1/chat/completions", {
