@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const riskLevel = assessRiskLevel(summary);
     const riskElement = document.getElementById('risk-level');
     if (riskElement) {
-      riskElement.textContent = `⚠️ Risk Level: ${riskLevel.label}`;
+      riskElement.innerHTML = `&#9888; Risk Level: ${riskLevel.label}`;
       riskElement.style.backgroundColor = riskLevel.color;
     } else {
       console.error("Element with ID 'risk-level' not found.");
