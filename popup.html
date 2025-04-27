@@ -1,7 +1,40 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <style>
+        .header-logo {
+            display: block;
+            max-width: 150px;
+            height: auto;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #3275FF; /* Example: Google blue */
+            text-align: center;       /* Horizontal centering */
+            margin: 0 auto;          /* Helps with centering block elements */
+            width: fit-content;      /* Makes the heading only as wide as its content */
+            padding: 10px 0;
+        }
+        #scan {
+            display: block;           /* Allows margin auto to work */
+            margin: 20px auto;        /* Centers horizontally with space above */
+            background-color: #3275FF; /* Matching blue */
+            color: white;
+            border: none;             /* Removes border */
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        #scan:hover {
+            background-color: #2a65d9; /* Slightly darker blue on hover */
+        }
+    </style>
+</head>
 <body>
-  <h1>TOS Tracker</h1>
+  <img src="SignScanLogo.png" alt="SignScan Logo" class="header-logo">
+  <h1>SignScan</h1>
   <button id="scan">Scan Terms</button>
   <script src="popup.js"></script>
 </body>
