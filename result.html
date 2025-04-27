@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TOS Summary</title>
+  <title>SignScan Summary</title>
   <style>
+    .header-logo {
+      display: block;
+      max-width: 150px;
+      height: auto;
+      margin: 0 auto;
+    }
     /* Add your CSS styles here */
     #risk-level {
       margin-top: 20px;
@@ -12,14 +18,32 @@
       color: white;
       transition: background-color 0.3s ease;
     }
+    h1 {
+        color: #3275FF; 
+        text-align: center;       /* Horizontal centering */
+        margin: 0 auto;          /* Helps with centering block elements */
+        width: fit-content;      /* Makes the heading only as wide as its content */
+        padding: 10px 0;
+    }
+    #summary {
+    line-height: 1.5;
+    padding: 10px;
+    }
+    #summary ul {
+        padding-left: 20px;
+    }
+    #summary li {
+        margin-bottom: 8px;
+    }
   </style>
 </head>
 <body>
-  <h1>TOS Summary</h1>
+  <img src="SignScanLogo.png" alt="SignScan Logo" class="header-logo">
+  <h1>SignScan Summary</h1>
   <div id="summary" style="white-space: pre-wrap; margin-top: 20px;"></div>
   <div id="risk-level"></div>
 
   <!-- Link to your external JavaScript file -->
-  <script src="result.js"></script>
+  <script src= "result.js"></scriptsrc></script>  
 </body>
 </html>
