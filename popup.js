@@ -22,7 +22,7 @@ document.getElementById('scan').addEventListener('click', async () => {
           console.error("Error saving summary:", chrome.runtime.lastError.message);
         } else {
           console.log("Summary saved successfully.");
-          // Wait briefly to ensure it's stored before opening the tab
+          // Wait briefly to ensure it is stored before opening the tab
           setTimeout(() => {
             chrome.tabs.create({ url: chrome.runtime.getURL("result.html") });
           }, 250); // 250ms delay
