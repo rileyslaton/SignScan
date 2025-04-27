@@ -27,14 +27,14 @@ function assessRiskLevel(text) {
     lowerText.includes("forced arbitration") ||
     lowerText.includes("limitation of liability")
   ) {
-    return { label: "High", color: "red" };
+    return { label: "High - 5", color: "red" };
   } else if (
     lowerText.includes("data selling") ||
     lowerText.includes("informal resolution")
   ) {
-    return { label: "Medium", color: "orange" };
+    return { label: "Medium - 3", color: "orange" };
   } else {
-    return { label: "Low", color: "green" };
+    return { label: "Low - 1", color: "green" };
   }
 }
 
