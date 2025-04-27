@@ -38,7 +38,7 @@ document.getElementById('scan').addEventListener('click', async () => {
   
   // Calls OpenAI to summarize the TOS
   async function sendToOpenAI(text) {
-    const apiKey = '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'; // Replace this with your real key
+    const apiKey = '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'; // Replace this with your real key
   
     try {
       const response = await fetch("https://api.openai.com/v1/chat/completions", {
@@ -56,7 +56,8 @@ document.getElementById('scan').addEventListener('click', async () => {
             },
             {
               role: "user",
-              content: `Summarize the following Terms of Service and highlight risks like waiving legal rights, forced arbitration, data selling, or limitations of liability in bullet points for critical main points so that it is not too long to read. then create sections based on the summary to consolidate summarized parts together with bolded headings and attractive formatting while making it look concise:\n\n${text}`
+              content: `Include a couple sentences at the top to summarize the main points of the following terms of service and tell the user whether they should accept or not. Then, Summarize the following Terms of Service and highlight risks like waiving legal rights, forced arbitration, data selling, or limitations of liability in bullet points for critical main points so that it is not too long to read, make sure you create sections and categorize listed elements as you summarize and don't include a heading called "Summary" or numbers listing the headings:\n\n${text}`
+            }
           ],
           temperature: 0.2
         })
@@ -76,5 +77,3 @@ document.getElementById('scan').addEventListener('click', async () => {
       return "Error: Unable to summarize the Terms of Service.";
     }
   }
-  
-  
