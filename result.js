@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const summary = data?.tosSummary || "No summary available.";
     const summaryElement = document.getElementById('summary');
     if (summaryElement) {
-      summaryElement.textContent = simpleMarkdownToHtml(summary);
+      summaryElement.innerHTML = simpleMarkdownToHtml(summary);
     } else {
       console.error("Element with ID 'summary' not found.");
     }
@@ -38,11 +38,15 @@ function assessRiskLevel(text) {
   }
 }
 
-function simpleMarkdownToHtml(text) {
-    return text
-      .replace(/^# (.*$)/gm, '<h1>$1</h1>')               // # Headers
-      .replace(/^## (.*$)/gm, '<h2>$1</h2>')             // ## Headers
-      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // **bold**
-      .replace(/\*(.*?)\*/g, '<em>$1</em>')              // *italic*
-      .replace(/\n/g, '<br>');                           // Newlines
+function simpleMarkdownToHtml(text) {  
+    return `<div style="font-size:25px">${
+        text
+          .replace(/^# (.*$)/gm, '<h1 style="font-size:35px">$1</h1>')
+          .replace(/^## (.*$)/gm, '<h2 style="font-size:35px">$1</h2>')
+          .replace(/^- ### (.*$)/gm, '<h3 style="font-size:35px"><strong><em>$1</em></strong></h3>')
+          .replace(/^### (.*$)/gm, '<h3 style="font-size:35px">$1</h3>')
+          .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+          .replace(/\*(.*?)\*/g, '<em>$1</em>')
+          .replace(/\n/g, '<br>')
+      }</div>`;                       
 }
