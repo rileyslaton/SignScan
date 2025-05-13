@@ -25,3 +25,5 @@ Click the puzzle piece icon → Pin your extension so it shows on the toolbar.
 
 To get the OpenAI working properly:
 1. Within the popup.js file, replace the line "enter your api key here" with the shared API key from the OpenAI project.
+
+https://pitch.com/v/signscan-pitch-jqm4rz
